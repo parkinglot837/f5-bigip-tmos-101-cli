@@ -11,8 +11,8 @@ TMSH can be used to automate system administration tasks.
 <br>[TMSH Reference](https://clouddocs.f5.com/cli/tmsh-reference/latest/)
 
 ### Create Vlans
-`tmsh create /net vlan client_vlan interfaces add { 1.1 }`
-<br>`tmsh create /net vlan server_vlan interfaces add { 1.2 }`
+'''tmsh create /net vlan client_vlan interfaces add { 1.1 }
+<br>tmsh create /net vlan server_vlan interfaces add { 1.2 }'''
 
 ### Create Self IPs
 `tmsh create net self server_ip { address 10.1.20.245/24 vlan server_vlan }`
