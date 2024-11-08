@@ -15,13 +15,13 @@ During the Lab if accessing the BIGIP via an SSH session or using a Web Shell se
 
 ![Enter TMSH](https://github.com/parkinglot837/f5-bigip-tmos-101-cli/blob/main/Lab1/shell-tmsh.png "shell-tmsh")
 All the commands given in these Lab documents will assume you are already in TMSH.
-#### Commands from bash
-<br>Commands may be issued from the bash prompt, if preceeded by 'tmsh'
-<br>For instance the first Create Vlans command can be run from bash like this
+#### Issuing Commands from bash
+Commands may also be issued from the bash prompt, but the command must be preceeded by 'tmsh'
+<br>For instance the first Create Vlans command below, can be run from the bash prompt like this
 ```
 tmsh create /net vlan client_vlan interfaces add { 1.1 }
 ```
-
+One of the primary benefits of entering the TNSH context having TAB Completion for commands.
 ### Create Vlans
 ```
 create /net vlan client_vlan interfaces add { 1.1 }
