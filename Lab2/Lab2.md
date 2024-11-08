@@ -5,15 +5,19 @@ Change Load Balancing
 tmsh modify /ltm pool /Common/www_pool load-balancing-mode ratio-member
 tmsh modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 {ratio 3 } }
 ```
-### Check the website and Stats
+Check the website and Statistics
 
 ### Priority Groups
-### Change LB back to Round Robin
+Change LB back to Round Robin
 ```
 tmsh modify /ltm pool /Common/www_pool load-balancing-mode round-robin
+```
+Add .11 and .12 to priority-group of 2
+```
 tmsh modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 10.1.20.12:80 {priority-group 2 } }
 tmsh modify /ltm pool /Common/www_pool min-active-members 2
 ```
+
 
 ### Check the website and Stats
 ### Disable .11 pool member
