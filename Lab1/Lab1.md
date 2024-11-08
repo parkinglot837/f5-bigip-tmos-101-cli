@@ -23,16 +23,15 @@ f5UDFrocks!
 ### Create Virtual Server
 `tmsh create ltm virtual www_vs destination 10.1.10.100:80 snat automap pool www_pool`
 
-### Test website on Jumpbox ###
+<br>Test website on Jumpbox ###
 
 ### Save an Archive
 `tmsh save sys ucs lab2_the_basics_net_pool_vs`
 
 
-
 ## Extra Credit
 While in tmsh
-`run /util bash
+<br>`run /util bash
 bigtop
 -n shows numeric port #`
 
