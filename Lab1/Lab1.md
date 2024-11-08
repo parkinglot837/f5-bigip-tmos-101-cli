@@ -13,7 +13,7 @@ TMSH can be used to automate system administration tasks.
 During the Lab if accessing the BIGIP via an SSH session or using a Web Shell session.
 <br>Enter TMSH by typing: `tmsh` in the bash context.
 
-![Enter TMSH](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![Enter TMSH](https://github.com/parkinglot837/f5-bigip-tmos-101-cli/blob/main/Lab1/shell-tmsh.png "shell-tmsh")
 
 
 ### Create Vlans
