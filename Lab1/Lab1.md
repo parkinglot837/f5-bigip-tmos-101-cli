@@ -10,8 +10,8 @@ TMSH can be used to automate system administration tasks.
 <br>
 <br>[TMSH Reference](https://clouddocs.f5.com/cli/tmsh-reference/latest/)
 ### Entering TMSH on the BIGIP
-During the Lab if accessing the BIGIP via an SSH session or using a Web Shell session.
-<br>Enter TMSH by typing: `tmsh` in the bash context.
+During the Lab if accessing the BIGIP via an SSH session or using a Web Shell session
+<br>enter TMSH by typing: `tmsh` in the bash prompt.
 
 ![Enter TMSH](https://github.com/parkinglot837/f5-bigip-tmos-101-cli/blob/main/Lab1/shell-tmsh.png "shell-tmsh")
 
