@@ -72,18 +72,17 @@ tmsh create /ltm persistence source-addr my-src-persist defaults-from source_add
 tmsh modify /ltm virtual www_vs persist replace-all-with { my-src-persist }
 ```
 
-### enable Persistence records
+Enable Persistence records
 ```
 tmsh modify sys db ui.statistics.modulestatistics.localtraffic.persistencerecords value true
 ```
 
-
-### Persistence from Cookie
+Persistence from Cookie
 ```
 tmsh create /ltm persistence cookie my_cookie_insert defaults-from cookie 
 ```
 
-### Enable http client profile for www_vs
+Enable http client profile for www_vs
 ```
 tmsh modify /ltm virtual www_vs profiles replace-all-with { http } 
 tmsh modify /ltm virtual www_vs persist replace-all-with { my_cookie_insert }
