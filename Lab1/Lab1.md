@@ -17,8 +17,10 @@ tmsh create /net vlan server_vlan interfaces add { 1.2 }
 ```
 
 ### Create Self IPs
-`tmsh create net self server_ip { address 10.1.20.245/24 vlan server_vlan }`
-<br>`tmsh create net self client_ip { address 10.1.10.245/24 vlan client_vlan }`
+```
+tmsh create net self server_ip { address 10.1.20.245/24 vlan server_vlan }
+tmsh create net self client_ip { address 10.1.10.245/24 vlan client_vlan }
+```
 
 ### Create default gateway
 `tmsh create net route def_gw { network 0.0.0.0/0.0.0.0 gw 10.1.10.1 }`
