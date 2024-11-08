@@ -1,10 +1,4 @@
-# lab 1: Basics:
-
-## Credentials
-  ### Passwords:
-f5UDFrocks!
-
-### Understanding TMSH
+# Understanding TMSH
 The Traffic Management Shell (tmsh) is F5's command-line interface (CLI) for managing and configuring their BIG-IP systems. 
 TMSH can be used to automate system administration tasks.
 <br>
@@ -22,6 +16,7 @@ Commands may also be issued from the bash prompt, but the command must be precee
 tmsh create /net vlan client_vlan interfaces add { 1.1 }
 ```
 One of the primary benefits of entering the TNSH context having TAB Completion for commands.
+# lab 1: Basics:
 ### Create Vlans
 ```
 create /net vlan client_vlan interfaces add { 1.1 }
