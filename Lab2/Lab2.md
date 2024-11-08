@@ -48,7 +48,7 @@ Change the monitor for the Pool from 'http' to 'www_test'
 tmsh modify ltm pool www_pool monitor www_test
 ```
 
-### Check the Pool members
+Check the Pool members
 
 Unassign monitor and enable Reverse on the www_test
 ```
@@ -57,14 +57,13 @@ modify /ltm monitor http www_test reverse enabled
 tmsh modify ltm pool www_pool monitor www_test
 ```
 
-### Disable Reverse on the www_test
+Disable Reverse on the www_test
 ```
 tmsh modify ltm pool www_pool monitor none 
 modify /ltm monitor http www_test reverse disabled 
 tmsh modify ltm pool www_pool monitor www_test
 ```
-
-### Check the website, VS, & Pool and Stats
+Check the website, VS, & Pool and Statistics
 
 ## Persistence Lab
 ### Persistence using Source Address
