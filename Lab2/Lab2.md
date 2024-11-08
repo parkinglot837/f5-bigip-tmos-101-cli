@@ -17,21 +17,18 @@ Add .11 and .12 to priority-group of 2
 tmsh modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 10.1.20.12:80 {priority-group 2 } }
 tmsh modify /ltm pool /Common/www_pool min-active-members 2
 ```
-
-
-### Check the website and Stats
-### Disable .11 pool member
+Check the website and Statistics
+Now Disable .11 pool member
 ```
 tmsh modify /ltm node 10.1.20.11 session user-disabled
 ```
-
-### Check the website and Stats
-### Re-enable .11 pool member
+Check the website and Statistics
+<br>
+<br>Re-enable .11 pool member
 ```
 tmsh modify /ltm node 10.1.20.11 session user-enabled
 ```
-
-### Change the Priority Group Activation back to Disabled
+Change the Priority Group Activation back to Disabled
 ```
 tmsh modify /ltm pool /Common/www_pool min-active-members 0
 ```
@@ -42,18 +39,18 @@ tmsh modify /ltm default-node-monitor rule icmp
 ```
 
 ## Content Monitors
+Create a content monitor called www_test
 ```
 tmsh create /ltm monitor http www_test send "GET /index.php HTTP/1.0\r\n\r\n" recv "200 OK" 
 ```
-
-### Change the monitor from 'http' to 'www_test'
+Change the monitor for the Pool from 'http' to 'www_test'
 ```
 tmsh modify ltm pool www_pool monitor www_test
 ```
 
 ### Check the Pool members
 
-### Unassign monitor and enable Reverse on the www_test
+Unassign monitor and enable Reverse on the www_test
 ```
 tmsh modify ltm pool www_pool monitor none 
 modify /ltm monitor http www_test reverse enabled 
