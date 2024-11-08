@@ -1,4 +1,4 @@
-# lab 1: Lab 1 Basics:
+# lab 1: Basics:
 
 ## Credentials
   ### Passwords:
