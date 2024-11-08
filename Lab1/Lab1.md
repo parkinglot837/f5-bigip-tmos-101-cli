@@ -5,8 +5,9 @@
 f5UDFrocks!
 
 ### Understanding TMSH
-
-[TMSH Reference](https://www.google.com)
+The Traffic Management Shell (tmsh) is F5's command-line interface (CLI) for managing and configuring their BIG-IP systems. 
+TMSH is a unified and hierarchical structure that simplifies system administration tasks.
+[TMSH Reference](https://clouddocs.f5.com/cli/tmsh-reference/latest/)
 
 ### Create Vlans
 `tmsh create /net vlan client_vlan interfaces add { 1.1 }`
