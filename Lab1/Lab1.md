@@ -5,6 +5,9 @@
 f5UDFrocks!
 
 ### Understanding TMSH
+
+[TMSH Reference](https://www.google.com)
+
 ### Create Vlans
 `tmsh create /net vlan client_vlan interfaces add { 1.1 }`
 `tmsh create /net vlan server_vlan interfaces add { 1.2 }`
