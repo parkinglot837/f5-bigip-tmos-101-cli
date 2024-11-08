@@ -51,7 +51,7 @@ While in tmsh
 run /util bash
 bigtop
 ```
-or `bigtop -n' which shows numeric port numbers.
+or `bigtop -n` which shows numeric port numbers.
 
 ### End of Lab 1
 
