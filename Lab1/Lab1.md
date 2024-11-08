@@ -31,9 +31,10 @@ f5UDFrocks!
 
 ## Extra Credit
 While in tmsh
-<br>`run /util bash
-bigtop
--n shows numeric port #`
+<br>`run /util bash`
+<br>`bigtop`
+<br>or
+<br>`bigtop -n' which shows numeric port numbers`
 
 ### End of Lab 1
 
