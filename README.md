@@ -1,4 +1,4 @@
-# f5-bigip-tmos-101-cli
+# BIG-IP Certified Administrator Lab CLI
 CLI commands to use for the BIG-IP Certified Administrator Lab.  
 [Clouddocs Lab Material](https://clouddocs.f5.com/training/community/f5cert/html/class2/class2.html)
 

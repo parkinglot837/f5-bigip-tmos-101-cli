@@ -62,5 +62,15 @@ or `bigtop -n` which shows numeric port numbers.
 
 ### End of Lab 1
 
-
-
+### Consolidated Commands for Lab 1
+To skip lab 1 and go directly to lab 2, you can run the following commands in TMSH to create the VLANs, Self IPs, default gateway, pool and virtual server needed for subsequent labs.
+```
+create /net vlan client_vlan interfaces add { 1.1 }
+create /net vlan server_vlan interfaces add { 1.2 }
+create net self server_ip { address 10.1.20.245/24 vlan server_vlan }
+create net self client_ip { address 10.1.10.245/24 vlan client_vlan }
+create net route def_gw { network 0.0.0.0/0.0.0.0 gw 10.1.10.1 }
+create ltm pool /Common/www_pool members add { /Common/10.1.20.11:80  } monitor http
+modify ltm pool /Common/www_pool members add { /Common/10.1.20.12:80 /Common/10.1.20.13:80 }
+create ltm virtual www_vs destination 10.1.10.100:80 snat automap pool www_pool
+```
