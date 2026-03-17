@@ -2,4 +2,4 @@
 
 
 
-[NEXT - Lab 9: BIG-IP LTM Management Interface](./Lab9/readme.md)
+[NEXT - Lab 9: BIG-IP LTM Management Interface](../Lab9/readme.md)

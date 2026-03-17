@@ -2,4 +2,4 @@
 
 
 
-[NEXT - Lab 7: Common Configuration Items](./Lab7/readme.md)
+[NEXT - Lab 7: Common Configuration Items](../Lab7/readme.md)

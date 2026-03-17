@@ -2,4 +2,4 @@
 
 
 
-[NEXT - Lab 8: BIG-IP Monitoring](./Lab8/readme.md)
+[NEXT - Lab 8: BIG-IP Monitoring](../Lab8/readme.md)

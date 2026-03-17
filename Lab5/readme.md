@@ -32,4 +32,4 @@ modify ltm virtual www_vs source-address-translation { type automap }
 ```
 
 
-[NEXT - Lab 6: Device Service Clusters (DSC)](./Lab6/readme.md)
+[NEXT - Lab 6: Device Service Clusters (DSC)](../Lab6/readme.md)

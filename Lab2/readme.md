@@ -96,4 +96,4 @@ save sys ucs lab3_lb_monitor_and_persist
 
 ### End of Lab 2
 
-[NEXT - Lab 3: SSL Offload and Security](./Lab3/readme.md)
+[NEXT - Lab 3: SSL Offload and Security](../Lab3/readme.md)

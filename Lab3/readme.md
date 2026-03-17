@@ -32,4 +32,4 @@ Now browse to https://www.f5demo.com and check the certificate. You will see a w
 Then try to go to a non-existent page like https://www.f5demo.com/abc.html and you will see the fallback page from the HTTP profile.
 
 
-[NEXT - Lab 4: BIG-IP Policies and iRules](./Lab4/readme.md)
+[NEXT - Lab 4: BIG-IP Policies and iRules](../Lab4/readme.md)
