@@ -3,7 +3,7 @@ CLI commands to use for the BIG-IP Certified Administrator Lab.
 [Clouddocs Lab Material](https://clouddocs.f5.com/training/community/f5cert/html/class2/class2.html)
 
 ## Labs
-Lab 1: The Basics (Networking, Pools and Virtual Servers)
+[Lab 1: The Basics (Networking, Pools and Virtual Servers)](./Lab1/readme.md)
 <br>Lab 2: Load Balancing, Monitoring and Persistence
 <br>Lab 3: SSL Offload and Security
 <br>Lab 4: BIG-IP Policies and iRules
