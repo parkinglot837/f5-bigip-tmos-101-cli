@@ -2,4 +2,4 @@
 
 
 
-[NEXT - Lab 10: Securing your BIG-IP](./Lab10/readme.md)
+[NEXT - Lab 10: Securing your BIG-IP](../Lab10/readme.md)
