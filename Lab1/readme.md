@@ -9,17 +9,18 @@ Enter TMSH by typing: `tmsh` in the bash prompt.
 ![Enter TMSH](https://github.com/parkinglot837/f5-bigip-tmos-101-cli/blob/main/Lab1/shell-tmsh.png "shell-tmsh")
 All the commands given in these Lab documents will assume you are already in TMSH.
 #### Issuing Commands from bash
-Commands may also be issued from the bash prompt, but the command must be preceeded by 'tmsh'
-<br>For instance the first Create Vlans command below, can be run from the bash prompt like this
+Commands may also be issued from the bash prompt, but the command must be preceeded by 'tmsh'.  
+For instance the first Create Vlans command below, can be run from the bash prompt like this
 ```
 tmsh create /net vlan client_vlan interfaces add { 1.1 }
 ```
 One of the primary benefits of entering the TNSH context having TAB Completion for commands.
 
+# Lab 1: Basics:
+
 Skip Lab 1 and go directly to Lab 2 by running the consolidated commands at the end of this document.  
 [Consolidated Commands for Lab 1](#consolidated-commands-for-lab-1)
 
-# Lab 1: Basics:
 ### Create Vlans
 ```
 create /net vlan client_vlan interfaces add { 1.1 }

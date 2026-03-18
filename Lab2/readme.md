@@ -1,4 +1,9 @@
 # Lab 2: Lab, Monitor, & Persistence 
+
+Skip Lab 2 and go directly to Lab 3 by running the consolidated commands at the end of this document.  
+[Consolidated Commands for Lab 2](#consolidated-commands-for-lab-2)
+
+
 ### Ratio Load Balancing
 Change Load Balancing
 ```
