@@ -17,15 +17,15 @@ Add .11 and .12 to priority-group of 2
 modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 10.1.20.12:80 {priority-group 2 } }
 modify /ltm pool /Common/www_pool min-active-members 2
 ```
-Check the website and Statistics
-<br>
-<br>Now Disable .11 pool member
+Check the website and Statistics.  
+
+Now Disable .11 pool member
 ```
 modify /ltm node 10.1.20.11 session user-disabled
 ```
-Check the website and Statistics
-<br>
-<br>Re-enable .11 pool member
+Check the website and Statistics.  
+
+Re-enable .11 pool member
 ```
 modify /ltm node 10.1.20.11 session user-enabled
 ```
@@ -95,5 +95,20 @@ save sys ucs lab3_lb_monitor_and_persist
 ```
 
 ### End of Lab 2
+
+### Consolidated Commands for Lab 2
+To skip lab 2 and go directly to lab 3, you can run the following commands in TMSH.
+```
+modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 {ratio 3 } }
+modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 10.1.20.12:80 {priority-group 2 } }
+create /ltm monitor http www_test send "GET /index.php HTTP/1.0\r\n\r\n" recv "200 OK" 
+modify ltm pool www_pool monitor www_test
+create /ltm persistence source-addr my-src-persist defaults-from source_addr timeout 60
+modify /ltm virtual www_vs persist replace-all-with { my-src-persist }
+modify sys db ui.statistics.modulestatistics.localtraffic.persistencerecords value true
+create /ltm persistence cookie my_cookie_insert defaults-from cookie 
+modify /ltm virtual www_vs profiles replace-all-with { http } 
+modify /ltm virtual www_vs persist replace-all-with { my_cookie_insert }
+```
 
 [NEXT - Lab 3: SSL Offload and Security](../Lab3/readme.md)

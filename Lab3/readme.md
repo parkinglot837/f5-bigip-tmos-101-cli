@@ -28,8 +28,10 @@ Attach this HTTP profile to the secure virtual server
 ```
 modify ltm virtual secure_vs profiles add { secure-my-website }
 ```
-Now browse to https://www.f5demo.com and check the certificate. You will see a warning because the certificate is self-signed. You can add an exception to your browser to continue. 
+Now browse to https://www.f5demo.com and check the certificate. You will see a warning because the certificate is self-signed. Add the exception to your browser to continue.  
+
 Then try to go to a non-existent page like https://www.f5demo.com/abc.html and you will see the fallback page from the HTTP profile.
 
+### End of Lab 3
 
 [NEXT - Lab 4: BIG-IP Policies and iRules](../Lab4/readme.md)

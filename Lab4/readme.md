@@ -47,4 +47,6 @@ Add the new policy to the virtual server
 modify ltm virtual secure_vs policies add { access_image_pool }
 ```
 
+### End of Lab 4
+
 [NEXT - Lab 5: Support and Troubleshooting](../Lab5/readme.md)
