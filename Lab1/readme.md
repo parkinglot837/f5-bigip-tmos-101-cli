@@ -15,6 +15,10 @@ Commands may also be issued from the bash prompt, but the command must be precee
 tmsh create /net vlan client_vlan interfaces add { 1.1 }
 ```
 One of the primary benefits of entering the TNSH context having TAB Completion for commands.
+
+Skip Lab 1 and go directly to Lab 2 by running the consolidated commands at the end of this document.  
+[Consolidated Commands for Lab 1](#consolidated-commands-for-lab-1)
+
 # Lab 1: Basics:
 ### Create Vlans
 ```
