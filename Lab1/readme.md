@@ -80,9 +80,9 @@ bigtop
 
 or `bigtop -n` which shows numeric port numbers.
 
-### End of Lab 1
+## End of Lab 1
 
-### Consolidated Commands for Lab 1
+## Consolidated Commands for Lab 1
 
 To skip lab 1 and go directly to lab 2, you can run the following commands in TMSH to create the VLANs, Self IPs, default gateway, pool and virtual server needed for subsequent labs.
 
