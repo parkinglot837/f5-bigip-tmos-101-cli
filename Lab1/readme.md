@@ -28,54 +28,65 @@ One of the primary benefits of entering the TNSH context having TAB Completion f
 Skip Lab 1 and go directly to Lab 2 by running the consolidated commands at the end of this document.  
 [Consolidated Commands for Lab 1](#consolidated-commands-for-lab-1)
 
-### Create Vlans
-```
+## Create Vlans
+
+```tmsh
 create /net vlan client_vlan interfaces add { 1.1 }
 create /net vlan server_vlan interfaces add { 1.2 }
 ```
 
-### Create Self IPs
-```
+## Create Self IPs
+
+```tmsh
 create net self server_ip { address 10.1.20.245/24 vlan server_vlan }
 create net self client_ip { address 10.1.10.245/24 vlan client_vlan }
 ```
 
-### Create default gateway
-```
+## Create default gateway
+
+```tmsh
 create net route def_gw { network 0.0.0.0/0.0.0.0 gw 10.1.10.1 }
 ```
 
-### Create Pool
-```
+## Create Pool
+
+```tmsh
 create ltm pool /Common/www_pool members add { /Common/10.1.20.11:80  } monitor http
 modify ltm pool /Common/www_pool members add { /Common/10.1.20.12:80 /Common/10.1.20.13:80 }
 ```
 
-### Create Virtual Server
-```
+## Create Virtual Server
+
+```tmsh
 create ltm virtual www_vs destination 10.1.10.100:80 snat automap pool www_pool
 ```
 
-<br>Test website on Jumpbox ###
+Test website on Jumpbox ###
 
-### Save an Archive
-```
+## Save an Archive
+
+```tmsh
 save sys ucs lab2_the_basics_net_pool_vs
 ```
 
 ## Extra Credit
+
 While in tmsh
-```
+
+```tmsh
 run /util bash
 bigtop
 ```
+
 or `bigtop -n` which shows numeric port numbers.
 
 ### End of Lab 1
 
 ### Consolidated Commands for Lab 1
+
 To skip lab 1 and go directly to lab 2, you can run the following commands in TMSH to create the VLANs, Self IPs, default gateway, pool and virtual server needed for subsequent labs.
-```
+
+```tmsh
 create /net vlan client_vlan interfaces add { 1.1 }
 create /net vlan server_vlan interfaces add { 1.2 }
 create net self server_ip { address 10.1.20.245/24 vlan server_vlan }
