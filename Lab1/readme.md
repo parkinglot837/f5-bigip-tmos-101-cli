@@ -11,9 +11,11 @@ All the commands given in these Lab documents will assume you are already in TMS
 #### Issuing Commands from bash
 Commands may also be issued from the bash prompt, but the command must be preceeded by 'tmsh'.  
 For instance the first Create Vlans command below, can be run from the bash prompt like this
-```
+
+```tmsh
 tmsh create /net vlan client_vlan interfaces add { 1.1 }
 ```
+
 One of the primary benefits of entering the TNSH context having TAB Completion for commands.
 
 # Lab 1: Basics:

@@ -1,4 +1,8 @@
 # Lab 4: BIG-IP Policies and iRules
+
+Skip Lab 4 and go directly to Lab 5 by running the consolidated commands at the end of this document.  
+[Consolidated Commands for Lab 4](#consolidated-commands-for-lab-4)
+
 ### Write an iRule to retrieve images when an HTTP request is received
 ```
 create ltm pool image_pool monitor http members add { 10.1.20.14:80 }
@@ -48,5 +52,15 @@ modify ltm virtual secure_vs policies add { access_image_pool }
 ```
 
 ### End of Lab 4
+
+### Consolidated Commands for Lab 4
+To skip lab 4 and go directly to lab 5, you can run the following commands in TMSH.
+```
+create ltm pool image_pool monitor http members add { 10.1.20.14:80 }
+create ltm policy Drafts/access_image_pool strategy all-match controls add { forwarding } rules add { get_images { conditions add { 0 { http-uri extension values { jpg svg } ends-with request } } actions add { 0 { forward pool image_pool request } } } }
+publish ltm policy Drafts/access_image_pool 
+modify ltm virtual secure_vs rules none
+modify ltm virtual secure_vs policies add { access_image_pool }
+```
 
 [NEXT - Lab 5: Support and Troubleshooting](../Lab5/readme.md)
