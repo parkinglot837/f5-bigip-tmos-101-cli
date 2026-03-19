@@ -65,7 +65,9 @@ modify ltm virtual secure_vs policies add { access_image_pool }
 
 ## Consolidated Commands for Lab 4
 
-To skip lab 4 and go directly to lab 5, you can run the following commands in TMSH.
+To skip lab 4 and go directly to lab 5, you can run the following commands in TMSH.  
+
+Run these commands in bigip01.  
 
 ```tmsh
 create ltm pool image_pool monitor http members add { 10.1.20.14:80 }

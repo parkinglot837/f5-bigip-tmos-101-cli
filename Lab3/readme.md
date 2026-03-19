@@ -47,7 +47,9 @@ Then try to go to a non-existent page like https://www.f5demo.com/abc.html and y
 
 ## Consolidated Commands for Lab 3
 
-To skip lab 3 and go directly to lab 4, you can run the following commands in TMSH.
+To skip lab 3 and go directly to lab 4, you can run the following commands in TMSH.  
+
+Run these commands in bigip01.  
 
 ```tmsh
 create sys crypto key my-selfsigned-cert key-size 2048 gen-certificate country US city Reston state Virginia organization 'IT' common-name www.f5demo.com lifetime 365

@@ -5,15 +5,15 @@
 On bigip01.f5demo.com save the configuration and create a ha_vlan
 
 ```tmsh
-save sys ucs lab6_dsc
+save sys ucs lab6_pre_dsc
 create /net vlan ha_vlan interfaces add { 1.3 }
 create net self ha_ip { address 10.1.30.245/24 vlan ha_vlan }
 modify /net self ha_ip allow-service default
 ```
 
-## bigip2.f5demo.com configs
+## bigip02.f5demo.com configs
 
-On bigip2.f5demo.com create all the same vlans; and then unique self IPs.
+On bigip02.f5demo.com create all the same vlans; and then unique self IPs.
 
 ```tmsh
 create /net vlan client_vlan interfaces add { 1.1 }
@@ -28,7 +28,13 @@ create net route def_gw { network 0.0.0.0/0.0.0.0 gw 10.1.10.1 }
 
 ## Create Device Certificates and Keys
 
-In the bash tmp directory, copy over the f5devcert.cnf file contents to bigip01 and bigip2. Use the CAT command to create the file.  For bigip02 Ensure you comment out and uncomment the lines related to the commonName, SAN and IP to match.
+In the bash tmp directory, copy over the f5devcert.cnf file contents to bigip01 and bigip02. Use the CAT command to create the file.  For bigip02 Ensure you comment out and uncomment the lines related to the commonName, SAN and IP to match.
+
+Review the contents of the certificate configuration file.
+
+[f5devcert.cnf](../Lab6/f5devcert.cnf)  
+
+Then generate new self-signed certificates and keys on bigip01 and bigip02. Run each command separately to ensure the command completes successfully.
 
 ```bash
 cd /tmp
@@ -37,7 +43,7 @@ cat > f5devcert.cnf
 
 Paste the contents into the Webshell and then CTRL+D to save the file.
 
-Generate new self-signed certificates and keys on bigip01 and bigip2. Run each command separately to ensure the command completes successfully.
+Generate new self-signed certificates and keys on bigip01 and bigip02. Run each command separately to ensure the command completes successfully.
 
 ```bash
 openssl req -newkey rsa:2048 -nodes -keyout /tmp/server.key -x509 -sha256 -days 30 -config f5devcert.cnf -out /tmp/server.crt
@@ -45,14 +51,14 @@ openssl req -newkey rsa:2048 -nodes -keyout /tmp/server.key -x509 -sha256 -days 
 openssl x509 -noout -text -in server.crt
 ```
 
-If the certificate is correct, copy the certificate and key to /config/httpd/conf/ssl.key and /config/httpd/conf/ssl.crt on both bigip01 and bigip2.
+If the certificate is correct, copy the certificate and key to /config/httpd/conf/ssl.key and /config/httpd/conf/ssl.crt on both bigip01 and bigip02.
 
 ```bash
 yes | cp /tmp/server.crt /config/httpd/conf/ssl.crt
 yes | cp /tmp/server.key /config/httpd/conf/ssl.key
 ```
 
-Then restart the httpd service on both bigip01 and bigip2.
+Then restart the httpd service on both bigip01 and bigip02.
 
 ```bash
 bigstart restart httpd
@@ -60,7 +66,7 @@ bigstart restart httpd
 
 ## Reset Device Trust and Configure Device Service Cluster (DSC)
 
-These steps must be done via TMUI. - On bigip01 and bigip2, "Reset Device Trust" under Device Management > Device Trust.  
+These steps must be done via TMUI. - On bigip01 and bigip02, "Reset Device Trust" under Device Management > Device Trust.  
 
 Back on the Web Shell for bigip01, run the following commands to set the ConfigSync IP, Networkfailover IP and enable Mirror using the ha_ip self IPs.
 
@@ -75,7 +81,7 @@ These steps must be done via TMUI. - Under Device Management > Device Trust, Add
 Then create a device group called my-device-group of type sync-failover and network-failover, and add both bigip01.f5demo.com and bigip02.f5demo.com to the group.
 Then run a config sync to the device group.
 
-```tms
+```tmsh
 create cm device-group my-device-group type sync-failover network-failover enabled 
 modify cm device-group my-device-group devices add { bigip01.f5demo.com bigip02.f5demo.com }
 run cm config-sync to-group my-device-group 
