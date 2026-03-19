@@ -129,7 +129,9 @@ save sys ucs lab3_lb_monitor_and_persist
 
 ## Consolidated Commands for Lab 2
 
-To skip lab 2 and go directly to lab 3, you can run the following commands in TMSH.
+To skip lab 2 and go directly to lab 3, you can run the following commands in TMSH.  
+
+Run these commands in bigip01.  
 
 ```tmsh
 modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 {ratio 3 } }
