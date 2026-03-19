@@ -1,5 +1,8 @@
 # Lab 5: Suppport and Troubleshooting
 
+Skip Lab 4 and go directly to Lab 5 - there are no prerequisites in this lab for Lab 5.  
+[SKIP to Lab 6: Device Service Clusters (DSC)](../Lab6/readme.md)
+
 ## Troubleshooting using TCPdump or Curl
 
 To test turn off AutoMap on the virtual server's source address translation.

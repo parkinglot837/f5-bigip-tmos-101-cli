@@ -51,7 +51,7 @@ To skip lab 3 and go directly to lab 4, you can run the following commands in TM
 
 ```tmsh
 create sys crypto key my-selfsigned-cert key-size 2048 gen-certificate country US city Reston state Virginia organization 'IT' common-name www.f5demo.com lifetime 365
-create ltm profile client-ssl my_clientssl_profile defaults-from clientssl cert-key-chain  add { my-selfsigned-cert_0 { cert my-selfsigned-cert key my-selfsigned-cert } }
+create ltm profile client-ssl my_clientssl_profile defaults-from clientssl cert-key-chain add { my-selfsigned-cert_0 { cert my-selfsigned-cert key my-selfsigned-cert } }
 create ltm virtual secure_vs { destination 10.1.10.105:443 ip-protocol tcp pool www_pool profiles add { my_clientssl_profile tcp } source-address-translation { type automap } }
 create ltm profile http secure-my-website defaults-from http fallback-host https://www.f5.com fallback-status-codes add { 404 } response-headers-permitted add { Content-Type Set-Cookie Location } insert-xforwarded-for enabled 
 modify ltm virtual secure_vs profiles add { secure-my-website }

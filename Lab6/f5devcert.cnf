@@ -1,0 +1,44 @@
+    [ req ]
+    # Do not prompt for distinguished name details
+    prompt = no
+    # Use SHA-256 for signing
+    default_md = sha256
+    # Section for distinguished name
+    distinguished_name = distinguished_name
+    # Section for extensions in a certificate request
+    req_extensions = extensions
+    x509_extensions = extensions
+    # Mark extensions as critical, if desired (optional)
+    # copy_extensions = copyall
+
+    [ distinguished_name ]
+    countryName = US
+    stateOrProvinceName = WA
+    localityName = Seattle
+    organizationName = F5, Inc.
+    organizationalUnitName = Public Sector
+    # Common Name is crucial and should match your primary domain/hostname
+    commonName = bigip01.f5demo.com
+    # commonName = bigip02.f5demo.com
+
+
+    [ extensions ]
+    # X.509 extensions to add to the certificate
+    # Basic Constraints: set to CA:FALSE for a server certificate, adjust pathlen as needed for a CA cert
+    basicConstraints = critical,CA:FALSE
+    # Key Usage
+    keyUsage = critical,digitalSignature,keyEncipherment
+    # Extended Key Usage (serverAuth for web servers, clientAuth for clients)
+    extendedKeyUsage = serverAuth,clientAuth
+    # Subject Alternative Names (SANs): list all hostnames and IPs here
+    subjectAltName = @alt_names
+
+    [ alt_names ]
+    DNS.1 = bigip01.f5demo.com
+    # DNS.1 = bigip02.f5demo.com
+    DNS.2 = localhost
+    DNS.3 = 127.0.0.1
+    IP.1 = 10.1.1.4
+    # IP.1 = 10.1.1.5
+
+    # Add more DNS or IP entries as needed (e.g., DNS.4 = mail.my.domain.test)
