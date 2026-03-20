@@ -76,7 +76,15 @@ modify cm device bigip01.f5demo.com unicast-address { { ip 10.1.30.245 port 1026
 modify cm device bigip01.f5demo.com mirror-ip 10.1.30.245
 ```
 
-These steps must be done via TMUI. - Under Device Management > Device Trust, Add bigip02.f5demo.com as a peer device with IP, Username and Password. Then click "Retrieve Device Information" and "Save Device Trust". You should see bigip02.f5demo.com as a peer device with a status of "Active".
+Run these commands on bigip02.
+
+```tmsh
+modify cm device bigip01.f5demo.com configsync-ip 10.1.30.245
+modify cm device bigip01.f5demo.com unicast-address { { ip 10.1.30.245 port 1026 } }
+modify cm device bigip01.f5demo.com mirror-ip 10.1.30.245
+```
+
+These steps must be done via TMUI. - Under Device Management > Device Trust > Device Trust Members, add bigip02.f5demo.com as a peer device with IP, Username and Password. Then click "Retrieve Device Information" and "Save Device Trust". You should see bigip02.f5demo.com as a peer device with a status of "Active".
 
 Then create a device group called my-device-group of type sync-failover and network-failover, and add both bigip01.f5demo.com and bigip02.f5demo.com to the group.
 Then run a config sync to the device group.

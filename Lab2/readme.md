@@ -12,7 +12,13 @@ modify /ltm pool /Common/www_pool load-balancing-mode ratio-member
 modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 {ratio 3 } }
 ```
 
-Check the website and Statistics
+Reset the Pool statistics.
+
+```tmsh
+reset-stats /ltm pool www_pool
+```
+
+Refresh the website a bunch of times and check the Statistics.
 
 ## Priority Groups
 
@@ -29,7 +35,13 @@ modify /ltm pool /Common/www_pool members modify { 10.1.20.11:80 10.1.20.12:80 {
 modify /ltm pool /Common/www_pool min-active-members 2
 ```
 
-Check the website and Statistics.  
+Reset the Pool statistics.
+
+```tmsh
+reset-stats /ltm pool www_pool
+```
+
+Refresh the website a bunch of times and check the Statistics.
 
 Now Disable .11 pool member
 
@@ -37,7 +49,9 @@ Now Disable .11 pool member
 modify /ltm node 10.1.20.11 session user-disabled
 ```
 
-Check the website and Statistics.  
+Reset the Pool statistics as before.  
+
+Refresh the website a bunch of times and check the Statistics.  
 
 Re-enable .11 pool member
 
