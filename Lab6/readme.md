@@ -66,7 +66,7 @@ bigstart restart httpd
 
 ## Reset Device Trust and Configure Device Service Cluster (DSC)
 
-These steps must be done via TMUI. - On bigip01 and bigip02, "Reset Device Trust" under Device Management > Device Trust.  
+These steps must be done via **TMUI**. - On bigip01 and bigip02, "Reset Device Trust" under Device Management > Device Trust.  Select **Generate New Self-Signed Authority**.
 
 Back on the Web Shell for bigip01, run the following commands to set the ConfigSync IP, Networkfailover IP and enable Mirror using the ha_ip self IPs.
 
@@ -84,7 +84,7 @@ modify cm device bigip02.f5demo.com unicast-address { { ip 10.1.30.246 port 1026
 modify cm device bigip02.f5demo.com mirror-ip 10.1.30.246
 ```
 
-These steps must be done via TMUI. - Under Device Management > Device Trust > Device Trust Members, add bigip02.f5demo.com as a peer device with IP, Username and Password. Then click "Retrieve Device Information" and "Save Device Trust". You should see bigip02.f5demo.com as a peer device with a status of "Active".
+These steps must be done via **TMUI**. - Under Device Management > Device Trust > Device Trust Members, add bigip02.f5demo.com as a peer device with IP of 10.1.1.5, Username and Password. Then click **Retrieve Device Information**"** and **Save Device Trust**. You should see bigip02.f5demo.com as a peer device with a status of "Active".
 
 Then create a device group called my-device-group of type sync-failover and network-failover, and add both bigip01.f5demo.com and bigip02.f5demo.com to the group.
 Then run a config sync to the device group.
