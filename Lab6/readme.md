@@ -28,7 +28,7 @@ create net route def_gw { network 0.0.0.0/0.0.0.0 gw 10.1.10.1 }
 
 ## Create Device Certificates and Keys
 
-In the bash tmp directory, copy over the f5devcert.cnf file contents to bigip01 and bigip02. Use the CAT command to create the file.  For bigip02 Ensure you comment out and uncomment the lines related to the commonName, SAN and IP to match.
+In the bash tmp directory, copy over the contents from the **f5devcert.cnf** file given below to bigip01 and bigip02. Use the CAT command to create the file. For bigip02, ensure you comment out and uncomment the lines related to the **commonName, SAN and IP** to match. TIP: use nano or vi to edit the file once on the device.
 
 Review the contents of the certificate configuration file.
 
@@ -79,9 +79,9 @@ modify cm device bigip01.f5demo.com mirror-ip 10.1.30.245
 Run these commands on bigip02.
 
 ```tmsh
-modify cm device bigip01.f5demo.com configsync-ip 10.1.30.245
-modify cm device bigip01.f5demo.com unicast-address { { ip 10.1.30.245 port 1026 } }
-modify cm device bigip01.f5demo.com mirror-ip 10.1.30.245
+modify cm device bigip02.f5demo.com configsync-ip 10.1.30.246
+modify cm device bigip02.f5demo.com unicast-address { { ip 10.1.30.246 port 1026 } }
+modify cm device bigip02.f5demo.com mirror-ip 10.1.30.246
 ```
 
 These steps must be done via TMUI. - Under Device Management > Device Trust > Device Trust Members, add bigip02.f5demo.com as a peer device with IP, Username and Password. Then click "Retrieve Device Information" and "Save Device Trust". You should see bigip02.f5demo.com as a peer device with a status of "Active".
