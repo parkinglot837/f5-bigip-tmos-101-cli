@@ -86,7 +86,7 @@ modify cm device bigip02.f5demo.com mirror-ip 10.1.30.246
 
 These steps must be done via **TMUI**. - Under Device Management > Device Trust > Device Trust Members, add bigip02.f5demo.com as a peer device with IP of 10.1.1.5, Username and Password. Then click **Retrieve Device Information**"** and **Save Device Trust**. You should see bigip02.f5demo.com as a peer device with a status of "Active".
 
-Then create a device group called my-device-group of type sync-failover and network-failover, and add both bigip01.f5demo.com and bigip02.f5demo.com to the group.
+Then run these commands on bigip01 to create a device group called my-device-group of type sync-failover and network-failover, and add both bigip01.f5demo.com and bigip02.f5demo.com to the group.
 Then run a config sync to the device group.
 
 ```tmsh
